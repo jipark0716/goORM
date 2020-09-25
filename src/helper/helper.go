@@ -49,3 +49,20 @@ func Chunk(array []string, size int) (chunks [][]string) {
 
     return append(chunks, array)
 }
+
+/*
+ * 격주 짝수 홀수 확인
+ *
+ * @param
+ *     time.Time 확인할 시간
+ *
+ * @return string biweeks:격주 짝수, biweek:격주 홀수
+*/
+func EOWeek(time time.Time) string {
+    _, week := time.ISOWeek()
+    if week % 2 == 0 {
+        return "biweeks"
+    } else {
+        return "biweek"
+    }
+}
